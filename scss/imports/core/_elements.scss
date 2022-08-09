@@ -1,0 +1,24 @@
+a {
+    color: $text-white-cl;
+    text-decoration: none;
+    display: block;
+}
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    object-fit: cover;
+    &.full-div {
+        min-width: 100%;
+        min-height: 100%
+    }
+}
+.description {
+    @include text($fz-text-m, $secondary-font, $lh-text, $text-black-cl, none);
+    &.--text-white {
+        color: $text-white-cl;
+    }
+    @include mobile {
+        font-size: $fz-text-m;
+    }
+}

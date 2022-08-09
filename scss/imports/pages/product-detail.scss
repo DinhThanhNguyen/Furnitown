@@ -1,0 +1,154 @@
+#product-detail__main {
+    margin-top: 76px;
+    .breadcrumb {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: $white-cl;
+        .share {
+            top: 50%;
+            @include transform(translateY(-50%));
+            z-index: 150;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            .logo {
+                flex: 1;
+                img {
+                    width: 60px;
+                    margin-left: 57%;
+                }
+            }
+            .show-more {
+                svg {
+                    @include transition(transform $t linear);
+                }
+                &:hover {
+                    svg {
+                        @include transform(translateX(-10px));
+                        @include transition(all $t linear);
+                    }
+                }
+            }
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: rgba($color: #555, $alpha: .8);
+        }
+    }
+    .info-product {
+        --pdTop: 50px;
+        padding-top: var(--pdTop);
+        .product-image {
+            &__slider {
+                cursor: pointer;
+                margin-top: 25px;
+            }
+        }
+        &__text {
+            --fz-name: 32px;
+            --spacingTop: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            .product-name {
+                @include text(var(--fz-name), 'Baskerville', $lh-text, $text-black-cl, none);
+            }
+            .product-detail__list {
+                margin-top: var(--spacingTop);
+                ul {
+                    @include text($fz-text-m, $secondary-font, $lh-text, $text-black-cl, none);
+                    display: flex;
+                    li {
+                        margin: 15px 0;
+                    }
+                    &.--price {
+                        font-weight: bold;
+                    }
+                }
+            }
+            .short-description {
+                margin-top: var(--spacingTop);
+                margin-bottom: 25px;
+                h5 {
+                    font-weight: bold;
+                }
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: calc(100% + var(--pdTop));
+                background-color: rgba($color: #555, $alpha: .8);
+                position: absolute;
+                top: calc(var(--pdTop)*-1);
+                left: 0;
+            }
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: rgba($color: #555, $alpha: .8);
+        }
+    }
+    .other-cart{
+        margin-top: 80px;
+        margin-bottom: 50px;
+        &__heading {
+            text-align: center;
+            @include text(18px, 'Baskerville', $lh-text, $text-black-cl, uppercase);
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+    }
+    @include tablet {
+        .breadcrumb {
+            .share {
+                display: flex;
+            }
+        }
+        .info-product {
+            &__text {
+                --fz-name: 26px;
+                --spacingTop: 25px;
+            }
+        }
+    }
+    @include mobile {
+        .breadcrumb {
+            .container {
+                .logo {
+                    img {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        .info-product {
+            &__text {
+                --fz-name: 26px;
+                --spacingTop: 25px;
+                margin-top: 40px;
+                .product-name {
+                    text-align: center;
+                }
+                &::after {
+                    display: none;
+                }
+
+            }
+        }
+    }
+}

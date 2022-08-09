@@ -1,0 +1,189 @@
+#about-us {
+    .about-us__text {
+        position: relative;
+        padding-top: 175px;
+        .about-us__heading {
+            @include text(44px, $primary-font, 50.45px, $yellow-cl, uppercase);
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .about-us__slogan {
+            @include text($fz-text-m, $secondary-font, $lh-text, $text-black-cl, uppercase);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .about-us__slogan-top {
+            margin-top: 50px;
+            margin-bottom: 65px;
+        }
+        .info {
+            &-des {
+                position: relative;
+                font-size: 14px;
+                margin: 0 15%;
+                text-align: center;
+                margin-bottom: 270px;
+                &::before {
+                    --heightline: 235px;
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    display: inline-block;
+                    width: 1px;
+                    height: var(--heightline);
+                    background-color: $black-cl;
+                    bottom: calc(var(--heightline) * -1 - 35px);
+                }
+            }
+            &-exp {
+                margin: 0 20px;
+                &__text {
+                    @include text($fz-text-m, $secondary-font, 3.5, $text-black-cl, none);
+                    letter-spacing: 1px;
+                }
+                &__image {
+                    padding-top: 110px;
+                }
+            }
+        }
+    }
+    .author {
+        padding-top: 160px;
+        &-textbox {
+            display: flex;
+            flex-direction: column;
+            &__des {
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: 1px;
+                margin: 0 20%;
+            }
+            &__name {
+                display: inline-block;
+                text-transform: uppercase;
+                margin: 40px auto 0 auto;
+                font-weight: bold;
+            }
+            &__ceo {
+                display: inline-block;
+                margin: 0 auto;
+                font-weight: bold;
+            }
+        }
+        &-image {
+            position: relative;
+            padding-top: 50px;
+            margin-bottom: 80px;
+            &__signature {
+                position: absolute;
+                bottom: -10%;
+                right: 23%;
+            }
+        }
+        .contact {
+            &-slogan {
+                text-align: center;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+            .button-group {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                margin-top: 50px;
+                .button-primary + .button-primary {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+    @include desktop {
+        .about-us__text {
+            padding-top: 100px;
+            .info {
+                &-des {
+                    &::before {
+                        --heightline: 200px;
+                    }
+                }
+                .info-exp {
+                    text-align: center;
+                }
+            }
+        }
+        .author {
+            &-image {
+                &__signature {
+                    right: 15%;
+                }
+            }
+        }
+    }
+    @include tablet {
+        .about-us__text {
+            padding-top: 100px;
+            .info {
+                &-des {
+                    &::before {
+                        --heightline: 200px;
+                    }
+                }
+                .info-exp {
+                    text-align: center;
+                }
+            }
+        }
+        .author {
+            &-image {
+                &__signature {
+                    right: 5%;
+                }
+            }
+        }
+    }
+    @include mobile {
+        .about-us__text {
+            padding-top: $spacing-mobile;
+            .info {
+                &-des {
+                    margin-bottom: $spacing-mobile;
+                    &::before {
+                        display: none;
+                    }
+                }
+                .info-exp {
+                    text-align: center;
+                    &__image {
+                        padding-top: $spacing-mobile;
+                    }
+                }
+            }
+        }
+        .author {
+            padding-top: $spacing-mobile;
+            &-textbox {
+                &__des {
+                    display: none;
+                }
+            }
+            &-image {
+                &__signature {
+                    bottom: -13%;
+                    right: 0%;
+                }
+            }
+            .contact {
+                .button-group {
+                    flex-direction: column;
+                    align-items: center;
+                    .button-primary + .button-primary {
+                        margin-left: 0;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

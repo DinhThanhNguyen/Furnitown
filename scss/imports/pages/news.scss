@@ -1,0 +1,34 @@
+#news {
+    --spacing: 55px;
+    .cart {
+        position: relative;
+        top: -300px;
+        z-index: 1;
+        margin-bottom: -180px;
+        &-heading {
+            position: relative;
+            padding-bottom: 110px;
+            h2 {
+                @include text($fz-title, $primary-font, $lh-des, $text-white-cl, uppercase);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: var(--spacing);
+                height: 1px;
+                width: 100%;
+                display: block;
+                background-color: $white-cl;
+            }
+        }
+    }
+    @include mobile {
+        --spacing: 40px;
+        .cart {
+            top: -150px;
+            &-heading {
+                padding-bottom: 80px;
+            }
+        }
+    }
+}

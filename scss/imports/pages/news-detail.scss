@@ -1,0 +1,83 @@
+#news-detail {
+    .news {
+        padding-top: 50px;
+        .news-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .share {
+                position: unset;
+                display: flex !important;
+            }
+        }
+        .previous-page.show-more {
+            &:hover {
+                .show-more__icon {
+                    @include transform(translateX(-10px));
+                }
+            }
+        }
+        &-image {
+            margin-top: 115px;
+            margin-bottom: 70px;
+        }
+        &-textbox {
+            &__title {
+                @include text(20px, $primary-font, 32px, $text-black-cl, uppercase);
+            }
+            &__des {
+                @include text($fz-text, $secondary-font, $lh-des, $text-black-cl, uppercase);
+                font-weight: bold;
+                letter-spacing: 1px;
+                margin: 40px 0;
+            }
+            &__time {
+                @include text($fz-text, $secondary-font, $lh-des, $text-black-cl, none);
+                font-style: italic;
+                letter-spacing: 1px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .other-cart{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        &__heading {
+            text-align: center;
+            @include text($fz-text-m, 'Baskerville', $lh-text, $text-black-cl, uppercase);
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+    }
+    @include desktop-large {
+        .news {
+            &-image {
+                margin-top: 65px;
+            }
+        }
+    }
+    @include desktop {
+        .news {
+            &-image {
+                margin-top: 65px;
+            }
+        }
+    }
+    @include tablet {
+        .news {
+            &-image {
+                margin-top: 50px;
+            }
+        }
+    }
+    @include mobile {
+        .news {
+            padding-top: 25px;
+            &-image {
+                margin-top: 35px;
+                margin-bottom: 35px;
+            }
+        }
+    }
+}

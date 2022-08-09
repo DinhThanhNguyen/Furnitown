@@ -1,0 +1,122 @@
+#contact {
+    background-image: url("../img/contact.jpg");
+    background-size: cover;
+    background-position: center;
+    .contact-us {
+        @include text($fz-text-m, $secondary-font, $lh-text, $yellow-cl, uppercase);
+        h3 {
+            font-weight: bold;
+        }
+        p {
+            color: $text-white-cl;
+            text-transform: none;
+        }
+        &__right {
+            .address {
+                margin-top: 25px;
+            }
+        }
+    }
+    .contact-form {
+        padding-top: $spacing-mobile;
+        display: flex;
+        flex-direction: column;
+        &__intro {
+            @include text($fz-text, $secondary-font, $lh-text, $white-cl, none);
+            letter-spacing: 1px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            .form-label {
+                @include text($fz-text-m, $secondary-font, $lh-text, $white-cl, none);
+                letter-spacing: 1px;
+                margin-top: 25px;
+            }
+            .form-control {
+                flex: 1;
+                border: none;
+                outline: none;
+                background: none;
+                padding: 8px;
+                border-bottom: 1px solid $yellow-cl;
+                color: $white-cl;
+                font-size: $fz-text-m;
+                line-height: $lh-text;
+            }
+            .form-message {
+                margin-top: 10px;
+                @include text($fz-text-m, $secondary-font, $lh-text, red, none);
+            }
+        }
+        .button-primary {
+            margin-top: 30px;
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            border: none;
+            outline: none;
+            background: none;
+            overflow-x: visible;
+            span {
+                position: relative;
+                background-color: $black-cl;
+                border: 1px solid $yellow-cl;
+                cursor: pointer;
+                padding: 12px 30px;
+                @include text($fz-text-m, $secondary-font, 1, $white-cl, uppercase);
+                font-weight: bold;
+                z-index: 1;
+                @include transition(color $t linear);
+                overflow-x: hidden;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 100%;
+                    background-color: $white-cl;
+                    z-index: -1;
+                    @include transform(translateX(-100%));
+                    @include transition(transform $t);
+                }
+                &:hover {
+                    color: $text-black-cl;
+                    &::before {
+                        left: 0;
+                        right: 0;
+                        @include transform(translateX(0));
+                    }
+                }
+            }
+        }
+    }
+    @include desktop-large {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    @include desktop {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    @include tablet {
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+    @include mobile {
+        padding-top: 25%;
+        padding-bottom: 20%;
+        .contact-us {
+            &__right {
+                margin-top: 30px;
+                .email {
+                    margin-top: 15px;
+                }
+                .address {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}

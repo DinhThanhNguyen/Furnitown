@@ -1,0 +1,28 @@
+/* Core variables and mixins*/
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/core/mixins";
+@import "imports/core/layouts";
+@import "imports/core/elements";
+@import "imports/core/components";
+@import "imports/core/bootstrap_mini";
+@import "imports/core/libs";
+
+@import "imports/core/loading";
+
+/* Navigation, header, footer*/
+@import "imports/core/header";
+@import "imports/core/nav";
+@import "imports/core/footer";
+
+/* Pages*/
+@import "imports/pages/_index";
+@import "imports/pages/about-us.scss";
+@import "imports/pages/contact.scss";
+@import "imports/pages/catalog.scss";
+@import "imports/pages/news-detail.scss";
+@import "imports/pages/news.scss";
+@import "imports/pages/product-detail.scss";
+@import "imports/pages/product.scss";
+@import "imports/pages/project.scss";
+@import "imports/pages/service.scss";

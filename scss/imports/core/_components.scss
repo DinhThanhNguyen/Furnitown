@@ -1,0 +1,307 @@
+.share {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    &-index {
+        @include text($fz-text, "Avenir", 30px, $black-cl, uppercase);
+        letter-spacing: 1px;
+    }
+    .show-more {
+        span {
+            font-family: "Avenir";
+            font-weight: normal;
+        }
+    }
+    &.--white-color {
+        .share-index {
+            color: $text-white-cl;
+        }
+        .show-more {
+            span {
+                color: $text-white-cl;
+            }
+            &__icon {
+                * {
+                    fill: $text-white-cl;
+                }
+            }
+        }
+    }
+    @include tablet {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+}
+.banner {
+    --heightBanner: 600px;
+    height: var(--heightBanner);
+    background-image: url(../img/bg-hero.jpg);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    .container {
+        position: relative;
+        height: 100%;
+        .banner-text {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            @include transform(translateY(-50%));
+            &__sologan {
+                @include text(24px, $primary-font, 50.45px, $text-white-cl, uppercase);
+                letter-spacing: 1px;
+                text-align: right;
+                margin-left: auto;
+                max-width: 42%;
+            }
+        }
+    }
+    @include desktop {
+        --heightBanner: 450px;
+        .container {
+            .banner-text {
+                &__sologan {
+                    max-width: 50%;
+                }
+            }
+        }
+    }
+    @include tablet {
+        --heightBanner: 400px;
+        .container {
+            .banner-text {
+                &__sologan {
+                    max-width: 50%;
+                }
+            }
+        }
+    }
+    @include mobile {
+        --heightBanner: 300px;
+        .banner-text__sologan {
+            display: none;
+        }
+    }
+}
+.paging {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    .paging-number {
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 10px;
+        color: $black-cl;
+        font-family: $secondary-font;
+        line-height: 1;
+        &.is-active {
+            border-color: $black-cl;
+            background-color: #ebebeb;
+        }
+        &:hover {
+            border-color: $black-cl;
+            background-color: #ebebeb;
+        }
+    }
+    .paging-number + .paging-number {
+        margin-left: 15px;
+    }
+}
+.product-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__thumbnail {
+        overflow: hidden;
+        img {
+            @include transition(all $t linear);
+        }
+    }
+    &__text {
+        padding: 15px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex: 1;
+        @include text($fz-text, $secondary-font, $lh-text, $text-black-cl, none);
+        @include transition(transform 0.3s linear);
+        h4 {
+            font-size: 18px;
+            word-break: break-all;
+            @include overtext(3);
+        }
+        h5 {
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        p {
+            margin: 20px 0;
+            @include overtext(3);
+        }
+        .show-more {
+            margin-left: 0;
+            justify-content: flex-start;
+            span {
+                @include transition(all 0.3s linear);
+            }
+            &__icon {
+                @include transition(all 0.3s linear);
+            }
+        }
+    }
+    &:hover {
+        .product-item__thumbnail {
+            img {
+                @include transform(scale(1.1));
+            }
+        }
+        .product-item__text {
+            background-color: $yellow-cl;
+            color: $text-white-cl;
+            .show-more {
+                span {
+                    color: $text-white-cl;
+                }
+                &__icon {
+                    @include transform(translateX(15px));
+                    @include transition(all 0.3s linear);
+                    * {
+                        @include transition(all 0.3s linear);
+                        fill: $text-white-cl;
+                    }
+                }
+            }
+        }
+    }
+}
+.intro {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 20px;
+    &-number {
+        @include text(90px, $primary-font, 1, #c48b2c, uppercase);
+    }
+    &-textbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &__title {
+            @include text(18px, $primary-font, 40px, $text-black-cl, uppercase);
+        }
+        &__description {
+            @include text($fz-text, $secondary-font, 20px, $text-black-cl, none);
+            margin-bottom: auto;
+            @include overtext(2);
+        }
+    }
+}
+.show-more {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    margin-left: auto;
+    span {
+        @include text($fz-text, $secondary-font, $lh-text, $black-cl, uppercase);
+        font-weight: 600;
+        padding: 0 15px 0 25px;
+    }
+    &__icon {
+        flex-shrink: 0;
+        margin: auto 0;
+        width: 20px;
+        @include transform(translateX(0px));
+        @include transition(all 0.3s linear);
+    }
+    &.--white-color {
+        span {
+            color: $text-white-cl;
+        }
+        svg {
+            * {
+                fill: $text-white-cl;
+            }
+        }
+    }
+    &:hover {
+        .show-more__icon {
+            @include transform(translateX(15px));
+        }
+    }
+}
+.button-primary {
+    width: fit-content;
+    min-width: 200px;
+    flex-shrink: 0;
+    border: 1px solid $black-cl;
+    overflow-x: hidden;
+    &__link {
+        position: relative;
+        height: 100%;
+        @include text($fz-text, $secondary-font, 1, $text-black-cl, uppercase);
+        font-weight: bold;
+        padding: 11px 45px;
+        z-index: 1;
+        @include transition(color $t);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-color: $black-cl;
+            z-index: -1;
+            @include transform(translateX(-100%));
+            @include transition(transform $t);
+        }
+    }
+    &:hover {
+        .button-primary__link {
+            color: $text-white-cl;
+            &::before {
+                left: 0;
+                right: 0;
+                @include transform(translateX(0));
+            }
+        }
+    }
+}
+.button-slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .button-control {
+        width: 40px;
+        height: 30px;
+        display: flex;
+        background-color: rgba($color: #555, $alpha: .8);
+        cursor: pointer;
+        @include transition(opacity $t);
+        svg {
+            width: 20px;
+            margin: auto;
+            * {
+                fill: $white-cl
+            }
+        }
+        &:hover {
+            opacity: .7;
+        }
+    }
+    .previous-button {
+        margin-right: 5px;
+    }
+}

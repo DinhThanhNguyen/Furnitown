@@ -1,0 +1,80 @@
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: $height-header;
+    background-color: $main-bg-cl;
+    @include hidden;
+    @include transform(translateY(-100%));
+    @include transition(all $t);
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .menu-scroll {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            &__item {
+                display: inline-block;
+                padding: 15px 0;
+                @include text($fz-text, $secondary-font, $lh-text, $text-white-cl, uppercase);
+                font-weight: bold;
+                cursor: pointer;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 1px;
+                    background-color: $white-cl;
+                    @include transition(all $t linear);
+                }
+                &.--logo {
+                    &::after {
+                        display: none;
+                    }
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .logo-mobile {
+            display: none;
+            padding-right: 20px;
+        }
+    }
+    &.--fixtop {
+        @include visible;
+        @include transform(translateY(0%));
+        @include transition(all $t linear);
+    }
+    @include desktop {
+        @include visible;
+        @include transform(translateY(0%));
+    }
+    @include tablet {
+        @include visible;
+        @include transform(translateY(0%));
+    }
+
+    @include mobile {
+        @include visible;
+        @include transform(translateY(0%));
+        .container {
+            .hamburger {
+                display: inline-block;
+            }
+            .menu-scroll {
+                display: none;
+            }
+            .logo-mobile {
+                display: block;
+            }
+        }
+    }
+}

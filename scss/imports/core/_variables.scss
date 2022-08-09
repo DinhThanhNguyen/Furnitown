@@ -1,0 +1,53 @@
+/*primary colors*/
+$white-cl: #fff;
+$black-cl: #000;
+$yellow-cl: #caa348;
+
+/*global text color*/
+$text-white-cl: #fff;
+$text-black-cl: #000;
+
+/*global bg color*/
+$main-bg-cl: #132539;
+$black-bg-cl: #000;
+$menu-cl: #1c2423;
+
+// time transition
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+/*font type*/
+$fz-text: 12px;
+$lh-text: 1.6;
+$fz-title: 26px;
+$lh-title: 50.45px;
+$lh-des: 26px;
+$spacing-mobile: 50px;
+
+
+$fz-text-m: 14px;
+$primary-font: "E", sans-serif;
+$secondary-font: 'Arial', sans-serif;
+
+
+/*Layout type*/
+$height-header: 70px;
+
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 320px;
+$xs-min: 768px;
+$sm-min: 1024px;
+$md-min: 1440px;
+$lg-min: 1600px;
+
+$xxs-max: ($xxs-min - 1);
+$xs-max: ($xs-min - 1);
+$sm-max: ($sm-min - 1);
+$md-max: ($md-min - 1);
+$lg-max: ($lg-min - 1);
+
+/*BOXED LAYOUT*/
+$max-width: 1920px;
+$container-max-width: $max-width;
+$container-width: 1200px;

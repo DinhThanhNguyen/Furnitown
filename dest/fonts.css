@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'E';
+    src: url('../fonts/ElleBaskerville.woff2') format('woff2'),
+        url('../fonts/ElleBaskerville.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'EB';
+    src: url('../fonts/ElleBaskerville-Bold.woff2') format('woff2'),
+        url('../fonts/ElleBaskerville-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'EBI';
+    src: url('../fonts/ElleBaskerville-BoldItalic.woff2') format('woff2'),
+        url('../fonts/ElleBaskerville-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'EI';
+    src: url('../fonts/ElleBaskerville-Italic.woff2') format('woff2'),
+        url('../fonts/ElleBaskerville-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'ESB';
+    src: url('../fonts/ElleBaskerville-SemiBold.woff2') format('woff2'),
+        url('../fonts/ElleBaskerville-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'ESBI';
+    src: url('../fonts/ElleBaskerville-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/ElleBaskerville-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Heavy.woff2') format('woff2'),
+        url('../fonts/Avenir-Heavy.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'Baskerville';
+    src: url('../fonts/Baskerville-Regular.woff2') format('woff2'),
+        url('../fonts/Baskerville-Regular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'Arial';
+    src: url('../fonts/SVN-Arial2.woff2') format('woff2'),
+        url('../fonts/SVN-Arial2.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
+
+
+
+
+
+

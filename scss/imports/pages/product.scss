@@ -1,0 +1,27 @@
+#products {
+    .intro {
+        display: flex;
+        &-textbox {
+            flex: 1;
+            &__description {
+                @include overtext(unset);
+            }
+        }
+    }
+    .products-list {
+        .show-more.--arrow-down {
+            flex-direction: column;
+            justify-content: center;
+            margin: 50px auto;
+            svg {
+                margin-bottom: 15px;
+                @include transition(transform $t linear);
+            }
+            &:hover {
+                svg {
+                    @include transform(translateY(10px));
+                }
+            }
+        }
+    }
+}

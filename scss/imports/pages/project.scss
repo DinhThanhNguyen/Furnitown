@@ -1,0 +1,100 @@
+#project {
+    .heading {
+        position: relative;
+        .container {
+            padding-top: 80px;
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: rgba($color: $black-cl, $alpha: 0.7);
+                margin-top: 55px;
+            }
+        }
+        &-textbox {
+            &__title {
+                @include text($fz-title, $primary-font, $lh-title, $text-black-cl, uppercase);
+                letter-spacing: 1px;
+                margin-bottom: 25px;
+            }
+            &__des {
+                span {
+                    font-family: $primary-font;
+                    font-weight: bold;
+                }
+            }
+        }
+        &-filter {
+            display: flex;
+            justify-content: flex-end;
+            .filter-current {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                background-color: $black-bg-cl;
+                padding: 10px 30px;
+                cursor: pointer;
+                min-width: 250px;
+                height: 40px;
+                margin-top: auto;
+                span {
+                    display: inline-block;
+                    flex: 1;
+                    @include text($fz-text-m, $secondary-font, 20px, $text-white-cl, uppercase);
+                    font-weight: bold;
+                    margin-right: 20px;
+                }
+                svg {
+                    width: 16px;
+                    @include transition(transform $t ease);
+                    * {
+                        fill: $white-cl;
+                    }
+                }
+                .filter-list {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 100%;
+                    overflow: hidden;
+                    z-index: 100;
+                    height: 0;
+                    @include transition(height $t linear);
+                    &__item {
+                        @include transition(all $t linear);
+                        @include hidden;
+                        padding: 10px 30px;
+                        background-color: #705b32;
+                        border: 1px solid rgba($color: $black-cl, $alpha: 0.3);
+                        cursor: pointer;
+                        @include text($fz-text-m, $secondary-font, 20px, $text-white-cl, uppercase);
+                        font-weight: bold;
+                    }
+                }
+                &.is-active {
+                    svg {
+                        @include transform(rotate(180deg));
+                        transform-origin: center;
+                    }
+                    .filter-list {
+                        height: calc(42px * 4);
+                        &__item {
+                            @include visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        .heading {
+            .heading-textbox {
+                text-align: center;
+            }
+            .heading-filter {
+                display: none;
+            }
+        }
+    }
+}

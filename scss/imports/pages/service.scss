@@ -1,0 +1,105 @@
+#service {
+    .service-top {
+        .container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 100px;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                background-color: $black-cl;
+            }
+            .title-page {
+                @include text(32px, $primary-font, 50.45px, $text-black-cl, uppercase);
+                margin: 0 auto;
+                padding-bottom: 25px;
+            }
+            .service-contact {
+                padding: 25px;
+                .service-contact__heading {
+                    @include text(26px, $primary-font, 50.45px, $text-black-cl, uppercase);
+                    letter-spacing: 1px;
+                }
+                .service-contact__textbox {
+                    p {
+                        @include text($fz-text, arial, 26px, $text-black-cl, none);
+                        padding-bottom: 25px;
+                    }
+                }
+                .button-group {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    .button-primary + .button-primary {
+                        margin-left: 20px;
+                    }
+                    @media screen and (min-width: 740px) and (max-width: 991px) {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .button-primary + .button-primary {
+                            margin-left: 0;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .construction {
+        &-textbox {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 55px;
+            &__title {
+                @include text(26px, $primary-font, 50.45px, $text-black-cl, uppercase);
+                letter-spacing: 1px;
+                margin: 0 auto;
+            }
+            &__des {
+                @include text($fz-text, $secondary-font, $lh-text, $text-black-cl, none);
+                margin: 0 auto;
+                text-align: center;
+                max-width: 50%;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    @include mobile {
+        .service-top {
+            .container {
+                .title-page {
+                    text-align: center;
+                }
+                .service-contact {
+                    &__heading {
+                        text-align: center;
+                    }
+                    .button-group {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .button-primary + .button-primary {
+                            margin-left: 0;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .construction {
+            &-textbox {
+                &__des {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
