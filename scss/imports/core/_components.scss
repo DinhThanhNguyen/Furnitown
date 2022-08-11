@@ -39,7 +39,7 @@
     }
 }
 .banner {
-    --heightBanner: 600px;
+    --heightBanner: 500px;
     height: var(--heightBanner);
     background-image: url(../img/bg-hero.jpg);
     background-position: top;
@@ -162,7 +162,7 @@
     &:hover {
         .product-item__thumbnail {
             img {
-                @include transform(scale(1.1));
+                @include transform(scale(1.05));
             }
         }
         .product-item__text {
