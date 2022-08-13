@@ -9,6 +9,7 @@
         &-wapper {
             &__carousel {
                 .carousel-image {
+                    width: 100vw;
                     height: var(--maxHeightCarousel);
                     max-height: var(--maxHeightCarousel);
                     overflow: hidden;
