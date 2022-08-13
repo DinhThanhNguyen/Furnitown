@@ -5,7 +5,7 @@ $(window).on('load', function () {
 $(document).ready(function () {
   $(".svg").svgToInline();
   changeFillter();
-  valiadateFormContact();
+  validateFormContact();
 
   const buttonMenu = document.querySelector(".button-open__menu");
   const menuHidden = document.querySelector(".navigation");
@@ -135,7 +135,7 @@ function changeFillter() {
   }
 }
 
-function valiadateFormContact() {
+function validateFormContact() {
   Validator({
     form: '#form-contact',
     formGroup: '.form-group',
