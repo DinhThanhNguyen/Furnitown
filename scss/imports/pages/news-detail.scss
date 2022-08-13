@@ -35,7 +35,9 @@
                 @include text($fz-text, $secondary-font, $lh-des, $text-black-cl, none);
                 font-style: italic;
                 letter-spacing: 1px;
-                margin-bottom: 40px;
+            }
+            p {
+                margin-top: 20px;
             }
         }
     }

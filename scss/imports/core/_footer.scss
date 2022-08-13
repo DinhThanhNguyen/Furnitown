@@ -36,10 +36,10 @@ footer {
 		}
 		.back-to__top {
 			position: absolute;
-			left: calc(100% - 30px);
+			left: calc(100% - 35px);
 			top: 70%;
 			display: inline-block;
-			width: fit-content;
+			width: 100px;
 			@include transform(rotate(90deg));
 			@include transform-origin(center top);
 			@include text($fz-text, $secondary-font, $lh-text, $text-white-cl, uppercase);

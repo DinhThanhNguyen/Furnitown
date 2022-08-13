@@ -2,7 +2,7 @@
     .heading {
         position: relative;
         .container {
-            padding-top: 80px;
+            padding-top: 120px;
             &::after {
                 content: "";
                 display: block;
@@ -47,6 +47,7 @@
                 }
                 svg {
                     width: 16px;
+                    @include transform(rotate(-90deg));
                     @include transition(transform $t ease);
                     * {
                         fill: $white-cl;
@@ -74,8 +75,8 @@
                 }
                 &.is-active {
                     svg {
-                        @include transform(rotate(180deg));
-                        transform-origin: center;
+                        @include transform(rotate(0deg));
+                        transform-origin: 50%;
                     }
                     .filter-list {
                         height: calc(42px * 4);
