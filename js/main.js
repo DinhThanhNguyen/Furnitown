@@ -96,6 +96,8 @@ function sliderHome() {
     draggable: true,
     prevNextButtons: false,
     pageDots: false,
+    lazyLoad: true,
+    lazyLoad: 2,
     on: {
       change: function (index) {
         $mainTextbox[index].classList.add('active')
@@ -232,12 +234,18 @@ function sliderProductDetail() {
     draggable: true,
     prevNextButtons: false,
     pageDots: false,
+    autoPlay: true,
+    autoPlay: 3000,
+    lazyLoad: true,
+    lazyLoad: 1
   })
   $navCarousel.flickity({
     asNavFor: '.product-carousel',
     contain: true,
     pageDots: false,
     prevNextButtons: false,
+    lazyLoad: true,
+    lazyLoad: 4,
   });
 }
 sliderProductDetail();
