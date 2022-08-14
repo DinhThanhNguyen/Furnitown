@@ -52,6 +52,16 @@
                 cursor: pointer;
                 margin-top: 25px;
             }
+            .product-image__item {
+                width: 100%;
+            }
+            .product-carousel__nav {
+                margin-top: 30px;
+                .carousel-nav__item {
+                    width: calc(25% - 20px);
+                    margin: 0 5px;
+                }
+            }
         }
         &__text {
             --fz-name: 32px;

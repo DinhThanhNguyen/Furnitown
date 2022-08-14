@@ -4,6 +4,17 @@ $(window).on("load", function () {
 
 $(document).ready(function () {
   $(".svg").svgToInline();
+  function jarallax() {
+    $(".jarallax").jarallax({
+      speed: 0.5,
+    });
+  }
+  jarallax();
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    anchorPlacement: "bottom",
+  });
   changeFillter();
   validateFormContact();
 
@@ -49,18 +60,6 @@ $(document).ready(function () {
   };
   window.addEventListener("scroll", handleScrollY);
 
-  function jarallax() {
-    $(".jarallax").jarallax({
-      speed: 0.5,
-    });
-  }
-  jarallax();
-  AOS.init({
-    duration: 1000,
-    easing: "ease-in-out",
-    anchorPlacement: "bottom",
-  });
-
   function changePage() {
     let pageCurrent = document.querySelectorAll(".paging-number");
 
@@ -84,40 +83,49 @@ $(document).ready(function () {
       behavior: "smooth",
     });
   }
-  // $("footer .back-to__top").animate({scrollTop: 0}, 1000);
   $("footer .back-to__top").on("click", backToTop);
 });
 
 //Slider Home Page
 function sliderHome() {
-  var $carousel = $(".slider-wapper").flickity({
+  let $mainTextbox = $('#index .main-textbox')
+  let $carousel = $("#index .slider-wapper").flickity({
     // options
     cellAlign: "left",
     contain: true,
     draggable: true,
     prevNextButtons: false,
     pageDots: false,
+    on: {
+      change: function (index) {
+        $mainTextbox[index].classList.add('active')
+      },
+      select: function (index) {
+        if(index > 0) {
+          $mainTextbox[index - 1].classList.remove('active')
+        }
+      }
+    }
   });
 
-  let $flktyPrevious = $('.button-slider .previous-button')
-  let $flktyNext = $('.button-slider .next-button')
+  let $flktyPrevious = $('#index .button-slider .previous-button')
+  let $flktyNext = $('#index .button-slider .next-button')
 
-  $flktyPrevious.on( 'click', function() {
-    console.log('click');
-    $carousel.flickity( 'previous', true );
+  $flktyPrevious.on('click', function () {
+    $carousel.flickity('previous', true);
   });
-  $flktyNext.on( 'click', function() {
-    $carousel.flickity( 'next', true );
+  $flktyNext.on('click', function () {
+    $carousel.flickity('next', true);
   });
 
   //jarallax slider on change
   var flkty = $carousel.data("flickity");
   var $imgs = $(".slider-wapper__carousel .carousel-image img");
 
-  $carousel.on("scroll.flickity", function (event, progress) {
+  $carousel.on("scroll.flickity", function () {
     flkty.slides.forEach(function (slide, i) {
       var img = $imgs[i];
-      var x = ((slide.target + flkty.x) * -3) / 4;
+      var x = ((slide.target + flkty.x) * -5) / 6;
       img.style.transform = "translateX( " + x + "px)";
     });
   });
@@ -214,61 +222,26 @@ function sliderCatalogPage() {
 }
 sliderCatalogPage();
 
-//Slider Product Detail Page
-function sliderProductDetailPage() {
-  let productDetailSlider = $("#product-detail__main .product-image__slider");
-
-  productDetailSlider.owlCarousel({
-    loop: true,
-    margin: 15,
-    dots: false,
-    smartSpeed: 1200,
-    autoHeight: false,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    responsive: {
-      0: {
-        items: 3,
-      },
-
-      992: {
-        items: 4,
-      },
-    },
+// Slider Product Detail Page
+function sliderProductDetail() {
+  let $mainCarousel = $("#product-detail__main .info-product .product-carousel")
+  let $navCarousel = $('#product-detail__main .info-product .product-carousel__nav')
+  $mainCarousel.flickity({
+    cellAlign: "left",
+    contain: true,
+    draggable: true,
+    prevNextButtons: false,
+    pageDots: false,
+  })
+  $navCarousel.flickity({
+    asNavFor: '.product-carousel',
+    contain: true,
+    pageDots: false,
+    prevNextButtons: false,
   });
-
-  $("#product-detail__main .product-image__slider img").on(
-    "click",
-    function () {
-      var imgurl = $(this).data("imgbigurl");
-      var bigImg = $(
-        "#product-detail__main .gallery .owl-item.active img"
-      ).attr("src");
-
-      if (imgurl != bigImg) {
-        $("#product-detail__main .gallery .owl-item.active img").attr({
-          src: imgurl,
-        });
-      }
-    }
-  );
 }
-sliderProductDetailPage();
+sliderProductDetail();
 
-//List image for photoswipe
-$("#product-detail__main .info-product .gallery").owlCarousel({
-  loop: true,
-  dots: false,
-  smartSpeed: 1200,
-  autoHeight: false,
-  autoplay: true,
-  autoplayTimeout: 3000,
-  responsive: {
-    0: {
-      items: 1,
-    },
-  },
-});
 
 //Photoswipe
 var initPhotoSwipeFromDOM = function (gallerySelector) {
