@@ -12,6 +12,10 @@ img {
         min-width: 100%;
         min-height: 100%
     }
+    &.full-screen {
+        max-width: unset;
+        width: 100vw;
+    }
 }
 .description {
     @include text($fz-text-m, $secondary-font, $lh-text, $text-black-cl, none);
